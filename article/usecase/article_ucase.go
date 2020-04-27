@@ -7,7 +7,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/bxcodec/go-clean-arch/domain"
+	"github.com/as-h-matsumoto/coordiy-backend/domain"
 )
 
 type articleUsecase struct {
@@ -29,7 +29,7 @@ func NewArticleUsecase(a domain.ArticleRepository, ar domain.AuthorRepository, t
 * In this function below, I'm using errgroup with the pipeline pattern
 * Look how this works in this package explanation
 * in godoc: https://godoc.org/golang.org/x/sync/errgroup#ex-Group--Pipeline
- */
+*/
 func (a *articleUsecase) fillAuthorDetails(c context.Context, data []domain.Article) ([]domain.Article, error) {
 	g, ctx := errgroup.WithContext(c)
 
@@ -98,6 +98,8 @@ func (a *articleUsecase) Fetch(c context.Context, cursor string, num int64) (res
 	if err != nil {
 		nextCursor = ""
 	}
+
+	// return のみの場合、関数の定義の通りに返す。
 	return
 }
 

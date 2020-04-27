@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/bxcodec/go-clean-arch/domain"
+	"github.com/as-h-matsumoto/coordiy-backend/domain"
 )
 
 type mysqlAuthorRepo struct {

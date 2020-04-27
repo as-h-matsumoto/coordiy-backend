@@ -7,8 +7,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/bxcodec/go-clean-arch/article/repository"
-	"github.com/bxcodec/go-clean-arch/domain"
+	"github.com/as-h-matsumoto/coordiy-backend/article/repository"
+	"github.com/as-h-matsumoto/coordiy-backend/domain"
 )
 
 type mysqlArticleRepository struct {
@@ -16,6 +16,7 @@ type mysqlArticleRepository struct {
 }
 
 // NewMysqlArticleRepository will create an object that represent the article.Repository interface
+// NewMysqlArticleRepositoryは、article.Repositoryインターフェースを表すオブジェクトを作成します
 func NewMysqlArticleRepository(Conn *sql.DB) domain.ArticleRepository {
 	return &mysqlArticleRepository{Conn}
 }
@@ -61,7 +62,7 @@ func (m *mysqlArticleRepository) fetch(ctx context.Context, query string, args .
 }
 
 func (m *mysqlArticleRepository) Fetch(ctx context.Context, cursor string, num int64) (res []domain.Article, nextCursor string, err error) {
-	query := `SELECT id,title,content, author_id, updated_at, created_at
+	query := `SELECT id, title, content, author_id, updated_at, created_at
   						FROM article WHERE created_at > ? ORDER BY created_at LIMIT ? `
 
 	decodedCursor, err := repository.DecodeCursor(cursor)

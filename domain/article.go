@@ -19,8 +19,8 @@ type Article struct {
 type ArticleUsecase interface {
 	Fetch(ctx context.Context, cursor string, num int64) ([]Article, string, error)
 	GetByID(ctx context.Context, id int64) (Article, error)
-	Update(ctx context.Context, ar *Article) error
 	GetByTitle(ctx context.Context, title string) (Article, error)
+	Update(ctx context.Context, ar *Article) error
 	Store(context.Context, *Article) error
 	Delete(ctx context.Context, id int64) error
 }

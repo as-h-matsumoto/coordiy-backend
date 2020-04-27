@@ -11,11 +11,11 @@ import (
 	"github.com/labstack/echo"
 	"github.com/spf13/viper"
 
-	_articleHttpDelivery "github.com/bxcodec/go-clean-arch/article/delivery/http"
-	_articleHttpDeliveryMiddleware "github.com/bxcodec/go-clean-arch/article/delivery/http/middleware"
-	_articleRepo "github.com/bxcodec/go-clean-arch/article/repository/mysql"
-	_articleUcase "github.com/bxcodec/go-clean-arch/article/usecase"
-	_authorRepo "github.com/bxcodec/go-clean-arch/author/repository/mysql"
+	_articleHttpDelivery "github.com/as-h-matsumoto/coordiy-backend/article/delivery/http"
+	_articleHttpDeliveryMiddleware "github.com/as-h-matsumoto/coordiy-backend/article/delivery/http/middleware"
+	_articleRepo "github.com/as-h-matsumoto/coordiy-backend/article/repository/mysql"
+	_articleUcase "github.com/as-h-matsumoto/coordiy-backend/article/usecase"
+	_authorRepo "github.com/as-h-matsumoto/coordiy-backend/author/repository/mysql"
 )
 
 func init() {

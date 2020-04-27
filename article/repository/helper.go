@@ -10,6 +10,7 @@ const (
 )
 
 // DecodeCursor will decode cursor from user for mysql
+// DecodeCursorは、mysqlユーザーからのカーソルをデコードします
 func DecodeCursor(encodedTime string) (time.Time, error) {
 	byt, err := base64.StdEncoding.DecodeString(encodedTime)
 	if err != nil {
@@ -23,6 +24,7 @@ func DecodeCursor(encodedTime string) (time.Time, error) {
 }
 
 // EncodeCursor will encode cursor from mysql to user
+// EncodeCursorは、mysqlからユーザーへのカーソルをエンコードします
 func EncodeCursor(t time.Time) string {
 	timeString := t.Format(timeFormat)
 

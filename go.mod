@@ -1,4 +1,4 @@
-module github.com/bxcodec/go-clean-arch
+module github.com/as-h-matsumoto/coordiy-backend
 
 go 1.12
 
